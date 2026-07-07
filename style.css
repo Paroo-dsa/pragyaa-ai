@@ -87,7 +87,8 @@ body::after{
 ========================================== */
 
 .sidebar{
-    width:260px;
+    width:220px;
+    
     min-height:100vh;
     background:rgba(255,255,255,.05);
     backdrop-filter:blur(25px);
@@ -171,16 +172,17 @@ body::after{
 }
 
 .heading h1{
-    font-size:clamp(2rem,5vw,3rem);
     font-weight:700;
     margin-bottom:10px;
+    font-size: large;
 }
 
 .heading h2{
-    font-size:clamp(1rem,2vw,1.4rem);
+   
     color:#d6d6d6;
     font-weight:400;
     line-height:1.6;
+    font-size: medium;    
 }
 
 .heading span{
@@ -198,7 +200,8 @@ body::after{
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    margin-top:20px;
+    margin-top:5px;
+    margin-bottom:5px;
 }
 
 /* ==========================================
@@ -207,8 +210,8 @@ body::after{
 
 .ai-circle{
 
-    width:220px;
-    height:220px;
+    width:170px;
+    height:170px;
     border-radius:50%;
     overflow:hidden;
 
@@ -301,7 +304,7 @@ body::after{
 
 .ai-bubble{
 
-    width:min(700px,95%);
+    width:min(500px,95%);
 
     min-height:90px;
 
@@ -319,7 +322,7 @@ body::after{
 
     color:#fff;
 
-    font-size:17px;
+    font-size:16px;
 
     line-height:30px;
 
@@ -420,7 +423,7 @@ body::after{
 
 .suggestions button{
 
-    padding:14px 22px;
+    padding:10px 20px;
 
     border:none;
 
@@ -432,7 +435,7 @@ body::after{
 
     color:#fff;
 
-    font-size:15px;
+    font-size:12px;
 
     cursor:pointer;
 
@@ -458,7 +461,7 @@ body::after{
 
 .chat-box{
 
-    width:min(900px,100%);
+    width:min(650px,100%);
 
     display:flex;
 
@@ -550,7 +553,7 @@ body::after{
 
 .right-panel{
 
-    width:310px;
+    width:250px;
 
     min-height:100vh;
 
@@ -639,23 +642,23 @@ body::after{
 
 /* ---------- Large Laptop ---------- */
 
-@media (max-width:1400px){
+@media (max-width:1100px){
 
 .right-panel{
 
-    width:280px;
+    width:250px;
 
 }
 
 .ai-bubble{
 
-    width:min(600px,95%);
+    width:min(150px,90%);
 
 }
 
 .chat-box{
 
-    width:95%;
+    width:85%;
 
 }
 
@@ -685,9 +688,9 @@ body::after{
 
 .ai-circle{
 
-    width:200px;
+    width:170;
 
-    height:200px;
+    height:170px;
 
 }
 
@@ -751,20 +754,6 @@ body{
     width:100%;
 
     padding:20px 15px 40px;
-
-}
-
-.heading h1{
-
-    font-size:30px;
-
-}
-
-.heading h2{
-
-    font-size:16px;
-
-    line-height:28px;
 
 }
 
@@ -860,17 +849,6 @@ body{
 
 }
 
-.heading h1{
-
-    font-size:24px;
-
-}
-
-.heading h2{
-
-    font-size:15px;
-
-}
 
 .ai-circle{
 
