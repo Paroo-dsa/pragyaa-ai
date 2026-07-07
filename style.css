@@ -20,13 +20,11 @@ html{
 }
 
 body{
-
     background:#060818;
-
-    color:white;
-
-    overflow:hidden;
-
+    color:#fff;
+    overflow-x:hidden;
+    overflow-y:auto;
+    min-height:100vh;
 }
 
 /* ==========================================
@@ -34,55 +32,31 @@ body{
 ========================================== */
 
 body::before{
-
     content:"";
-
     position:fixed;
-
     width:450px;
-
     height:450px;
-
     border-radius:50%;
-
     background:#8b5cf6;
-
     filter:blur(170px);
-
     left:-120px;
-
     top:-120px;
-
     opacity:.35;
-
     z-index:-1;
-
 }
 
 body::after{
-
     content:"";
-
     position:fixed;
-
     width:450px;
-
     height:450px;
-
     border-radius:50%;
-
     background:#06b6d4;
-
     filter:blur(170px);
-
     right:-150px;
-
     bottom:-150px;
-
     opacity:.25;
-
     z-index:-1;
-
 }
 
 /* ==========================================
@@ -90,31 +64,22 @@ body::after{
 ========================================== */
 
 ::-webkit-scrollbar{
-
     width:8px;
-
 }
 
 ::-webkit-scrollbar-thumb{
-
     background:#8b5cf6;
-
     border-radius:20px;
-
 }
 
 /* ==========================================
-        MAIN CONTAINER
+        CONTAINER
 ========================================== */
 
 .container{
-
     width:100%;
-
-    height:100vh;
-
+    min-height:100vh;
     display:flex;
-
 }
 
 /* ==========================================
@@ -122,221 +87,161 @@ body::after{
 ========================================== */
 
 .sidebar{
-
     width:260px;
-
-    height:100vh;
-
+    min-height:100vh;
     background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(30px);
-
+    backdrop-filter:blur(25px);
     border-right:1px solid rgba(255,255,255,.08);
-
     padding:30px;
-
+    flex-shrink:0;
 }
 
 .logo{
-
     text-align:center;
-
 }
 
 .logo img{
-
     width:95px;
-
     height:95px;
-
     border-radius:50%;
-
     object-fit:cover;
-
     border:3px solid #8b5cf6;
-
-    box-shadow:0 0 30px #8b5cf6;
-
+    box-shadow:0 0 25px rgba(139,92,246,.6);
 }
 
 .logo h2{
-
     margin-top:15px;
-
     letter-spacing:3px;
-
 }
 
 .logo p{
-
-    color:#aaa;
-
+    color:#bdbdbd;
     font-size:14px;
-
     margin-top:5px;
-
 }
 
 .sidebar ul{
-
     list-style:none;
-
     margin-top:45px;
-
 }
 
 .sidebar ul li{
-
     padding:15px;
-
-    border-radius:15px;
-
     margin-bottom:14px;
-
+    border-radius:15px;
     cursor:pointer;
-
     transition:.35s;
-
 }
 
 .sidebar ul li i{
-
     margin-right:12px;
-
 }
 
 .sidebar ul li:hover{
-
     background:#8b5cf6;
-
     transform:translateX(6px);
-
 }
 
 .active{
-
     background:#8b5cf6;
-
 }
 
 /* ==========================================
-        MAIN
+                MAIN
 ========================================== */
 
 .main{
-
     flex:1;
-
     display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
     flex-direction:column;
-
-    padding:35px;
-
+    justify-content:flex-start;
+    align-items:center;
+    padding:40px 30px;
+    overflow-y:auto;
 }
 
+/* ==========================================
+                HEADING
+========================================== */
+
 .heading{
-
+    width:100%;
     text-align:center;
-
+    margin-bottom:20px;
 }
 
 .heading h1{
-
-    font-size:48px;
-
+    font-size:clamp(2rem,5vw,3rem);
+    font-weight:700;
+    margin-bottom:10px;
 }
 
 .heading h2{
-
-    color:#d5d5d5;
-
-    margin-top:10px;
-
+    font-size:clamp(1rem,2vw,1.4rem);
+    color:#d6d6d6;
     font-weight:400;
-
+    line-height:1.6;
 }
 
 .heading span{
-
     color:#8b5cf6;
-
     font-weight:700;
-
 }
+
 /* ==========================================
-            AI SECTION
+                AI BOX
 ========================================== */
 
 .ai-box{
-
-    margin-top:40px;
-
+    width:100%;
     display:flex;
-
     flex-direction:column;
-
-    align-items:center;
-
     justify-content:center;
-
+    align-items:center;
+    margin-top:20px;
 }
 
 /* ==========================================
-            AI CIRCLE
+                AI CIRCLE
 ========================================== */
 
 .ai-circle{
 
     width:220px;
-
     height:220px;
-
     border-radius:50%;
+    overflow:hidden;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
     background:linear-gradient(135deg,#8b5cf6,#5b21b6);
 
     box-shadow:
-        0 0 25px #8b5cf6,
-        0 0 60px rgba(139,92,246,.5);
+        0 0 30px rgba(139,92,246,.8),
+        0 0 80px rgba(139,92,246,.35);
 
-    transition:.5s;
-
-    overflow:hidden;
-
-    position:relative;
+    transition:.4s;
 
 }
 
 .ai-circle img{
 
     width:180px;
-
     height:180px;
-
-    border-radius:50%;
-
     object-fit:cover;
+    border-radius:50%;
 
 }
 
 /* ==========================================
-            SPEAKING ANIMATION
+            SPEAKING EFFECT
 ========================================== */
 
 .ai-circle.speaking{
 
-    animation:speaking 1s infinite;
+    animation:speaking 1s infinite ease-in-out;
 
 }
 
@@ -347,8 +252,8 @@ body::after{
         transform:scale(1);
 
         box-shadow:
-        0 0 25px #8b5cf6,
-        0 0 60px #8b5cf6;
+        0 0 30px #8b5cf6,
+        0 0 60px rgba(139,92,246,.5);
 
     }
 
@@ -358,7 +263,7 @@ body::after{
 
         box-shadow:
         0 0 45px #8b5cf6,
-        0 0 90px #8b5cf6;
+        0 0 100px rgba(139,92,246,.9);
 
     }
 
@@ -367,58 +272,64 @@ body::after{
         transform:scale(1);
 
         box-shadow:
-        0 0 25px #8b5cf6,
-        0 0 60px #8b5cf6;
+        0 0 30px #8b5cf6,
+        0 0 60px rgba(139,92,246,.5);
 
     }
 
 }
 
 /* ==========================================
-            STATUS
+                STATUS
 ========================================== */
 
 #status{
 
-    margin-top:25px;
+    margin-top:22px;
 
-    font-size:22px;
+    color:#d5d5d5;
 
-    color:#d7d7d7;
+    font-size:20px;
+
+    text-align:center;
 
 }
 
 /* ==========================================
-            AI BUBBLE
+                AI BUBBLE
 ========================================== */
 
 .ai-bubble{
 
-    width:650px;
+    width:min(700px,95%);
 
     min-height:90px;
 
     margin-top:25px;
 
-    padding:20px;
+    padding:20px 24px;
 
-    border-radius:25px;
+    border-radius:22px;
 
     background:rgba(255,255,255,.08);
 
     border:1px solid rgba(255,255,255,.12);
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:blur(20px);
 
-    color:white;
+    color:#fff;
 
-    text-align:center;
-
-    font-size:18px;
+    font-size:17px;
 
     line-height:30px;
 
+    text-align:center;
+
+    word-break:break-word;
+
     box-shadow:0 0 25px rgba(139,92,246,.35);
+
+    transition:.3s;
 
 }
 
@@ -434,7 +345,7 @@ body::after{
 
     align-items:center;
 
-    gap:12px;
+    gap:10px;
 
     margin-top:20px;
 
@@ -442,9 +353,9 @@ body::after{
 
 .typing-dots span{
 
-    width:14px;
+    width:12px;
 
-    height:14px;
+    height:12px;
 
     border-radius:50%;
 
@@ -478,7 +389,7 @@ body::after{
 
     to{
 
-        transform:translateY(-12px);
+        transform:translateY(-10px);
 
         opacity:1;
 
@@ -491,15 +402,19 @@ body::after{
 
 .suggestions{
 
+    width:100%;
+
     display:flex;
-
-    gap:15px;
-
-    flex-wrap:wrap;
 
     justify-content:center;
 
-    margin-top:40px;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:35px;
 
 }
 
@@ -515,13 +430,15 @@ body::after{
 
     background:#171d34;
 
-    color:white;
+    color:#fff;
+
+    font-size:15px;
 
     cursor:pointer;
 
     transition:.3s;
 
-    font-size:15px;
+    white-space:nowrap;
 
 }
 
@@ -531,19 +448,23 @@ body::after{
 
     transform:translateY(-5px);
 
+    box-shadow:0 0 20px rgba(139,92,246,.4);
+
 }
 
 /* ==========================================
-            CHAT BOX
+                CHAT BOX
 ========================================== */
 
 .chat-box{
 
-    width:80%;
+    width:min(900px,100%);
 
     display:flex;
 
     align-items:center;
+
+    justify-content:center;
 
     margin-top:40px;
 
@@ -551,29 +472,35 @@ body::after{
 
 .chat-box input{
 
-    width:100%;
+    flex:1;
 
     height:65px;
-
-    background:#171d34;
 
     border:none;
 
     outline:none;
 
-    color:white;
+    background:#171d34;
 
-    font-size:17px;
+    color:#fff;
 
-    padding-left:20px;
+    padding:0 22px;
+
+    font-size:16px;
 
     border-radius:40px 0 0 40px;
 
 }
 
+.chat-box input::placeholder{
+
+    color:#9d9d9d;
+
+}
+
 .chat-box button{
 
-    width:80px;
+    width:75px;
 
     height:65px;
 
@@ -581,41 +508,51 @@ body::after{
 
     cursor:pointer;
 
-    background:#8b5cf6;
+    font-size:20px;
 
-    color:white;
-
-    font-size:22px;
+    color:#fff;
 
     transition:.3s;
 
 }
 
-.chat-box button:hover{
-
-    background:#6d28d9;
-
-}
-
 #micBtn{
+
+    background:#06b6d4;
 
     border-radius:0;
 
 }
 
+#micBtn:hover{
+
+    background:#0891b2;
+
+}
+
 #sendBtn{
+
+    background:#8b5cf6;
 
     border-radius:0 40px 40px 0;
 
 }
 
+#sendBtn:hover{
+
+    background:#6d28d9;
+
+}
+
 /* ==========================================
-            RIGHT PANEL
+                RIGHT PANEL
 ========================================== */
 
 .right-panel{
 
-    width:300px;
+    width:310px;
+
+    min-height:100vh;
 
     padding:25px;
 
@@ -625,6 +562,8 @@ body::after{
 
     border-left:1px solid rgba(255,255,255,.08);
 
+    flex-shrink:0;
+
 }
 
 .card{
@@ -633,9 +572,19 @@ body::after{
 
     border-radius:20px;
 
-    padding:20px;
+    padding:22px;
 
     margin-bottom:20px;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 20px rgba(139,92,246,.3);
 
 }
 
@@ -647,9 +596,25 @@ body::after{
 
 }
 
+.card h1{
+
+    font-size:28px;
+
+}
+
+.card h2{
+
+    margin-top:10px;
+
+}
+
 .card p{
 
-    color:#bfbfbf;
+    color:#cfcfcf;
+
+    margin-top:8px;
+
+    line-height:1.5;
 
 }
 
@@ -657,19 +622,117 @@ body::after{
 
     list-style:none;
 
+    margin-top:10px;
+
 }
 
 .card ul li{
 
-    margin:10px 0;
+    margin:12px 0;
+
+    color:#d8d8d8;
 
 }
-
 /* ==========================================
             RESPONSIVE
 ========================================== */
 
-@media(max-width:1200px){
+/* ---------- Large Laptop ---------- */
+
+@media (max-width:1400px){
+
+.right-panel{
+
+    width:280px;
+
+}
+
+.ai-bubble{
+
+    width:min(600px,95%);
+
+}
+
+.chat-box{
+
+    width:95%;
+
+}
+
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:1100px){
+
+.sidebar{
+
+    width:220px;
+
+}
+
+.right-panel{
+
+    display:none;
+
+}
+
+.main{
+
+    padding:30px 20px;
+
+}
+
+.ai-circle{
+
+    width:200px;
+
+    height:200px;
+
+}
+
+.ai-circle img{
+
+    width:165px;
+
+    height:165px;
+
+}
+
+.ai-bubble{
+
+    width:95%;
+
+}
+
+.chat-box{
+
+    width:100%;
+
+}
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+html,
+body{
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+}
+
+.container{
+
+    flex-direction:column;
+
+    min-height:100vh;
+
+}
 
 .sidebar{
 
@@ -687,6 +750,78 @@ body::after{
 
     width:100%;
 
+    padding:20px 15px 40px;
+
+}
+
+.heading h1{
+
+    font-size:30px;
+
+}
+
+.heading h2{
+
+    font-size:16px;
+
+    line-height:28px;
+
+}
+
+.ai-circle{
+
+    width:170px;
+
+    height:170px;
+
+}
+
+.ai-circle img{
+
+    width:135px;
+
+    height:135px;
+
+}
+
+#status{
+
+    font-size:18px;
+
+}
+
+.ai-bubble{
+
+    width:100%;
+
+    font-size:15px;
+
+    line-height:26px;
+
+    padding:18px;
+
+}
+
+.typing-dots span{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+.suggestions{
+
+    flex-direction:column;
+
+    width:100%;
+
+}
+
+.suggestions button{
+
+    width:100%;
+
 }
 
 .chat-box{
@@ -695,45 +830,9 @@ body::after{
 
 }
 
-.ai-bubble{
-
-    width:90%;
-
-}
-
-}
-
-@media(max-width:768px){
-
-.heading h1{
-
-    font-size:34px;
-
-}
-
-.heading h2{
-
-    font-size:18px;
-
-}
-
-.ai-circle{
-
-    width:180px;
-
-    height:180px;
-
-}
-
-.ai-circle img{
-
-    width:145px;
-
-    height:145px;
-
-}
-
 .chat-box input{
+
+    height:55px;
 
     font-size:15px;
 
@@ -741,7 +840,79 @@ body::after{
 
 .chat-box button{
 
-    width:65px;
+    width:55px;
+
+    height:55px;
+
+    font-size:18px;
+
+}
+
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:480px){
+
+.main{
+
+    padding:15px;
+
+}
+
+.heading h1{
+
+    font-size:24px;
+
+}
+
+.heading h2{
+
+    font-size:15px;
+
+}
+
+.ai-circle{
+
+    width:150px;
+
+    height:150px;
+
+}
+
+.ai-circle img{
+
+    width:120px;
+
+    height:120px;
+
+}
+
+.ai-bubble{
+
+    font-size:14px;
+
+    line-height:24px;
+
+}
+
+.chat-box{
+
+    flex-wrap:nowrap;
+
+}
+
+.chat-box input{
+
+    font-size:14px;
+
+    padding:0 15px;
+
+}
+
+.chat-box button{
+
+    width:50px;
 
 }
 
