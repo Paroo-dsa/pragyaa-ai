@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <link rel="icon" href="images/avatar.png" type="image/x-icon">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pragya AI Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <img src="https://img.magnific.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?semt=ais_hybrid&w=740&q=80"
+                    alt="Pragya">
+
+                <h2>PRAGYA</h2>
+
+                <p>AI ASSISTANT</p>
+
+            </div>
+
+            <!-- <ul>
+
+                <li class="active"><i class="fa-solid fa-house"></i> Home</li>
+
+                <li><i class="fa-solid fa-comments"></i> Chat</li>
+
+                <li><i class="fa-solid fa-terminal"></i> Commands</li>
+
+                <li><i class="fa-solid fa-cloud"></i> Weather</li>
+
+                <li><i class="fa-solid fa-newspaper"></i> News</li>
+
+                <li><i class="fa-solid fa-calculator"></i> Calculator</li>
+
+                <li><i class="fa-solid fa-gear"></i> Settings</li>
+
+            </ul> -->
+
+        </aside>
+
+        <!-- Main -->
+
+        <main class="main">
+
+            <div class="heading">
+
+                <h1 id="greeting">Good Morning 👋</h1>
+
+                <h2>
+
+                    I am <span>Pragya</span>.
+
+                    How can I help you,
+
+                    <span id="username">User</span>?
+
+                </h2>
+
+            </div>
+
+            <!-- AI BOX -->
+
+            <div class="ai-box">
+
+                <div id="aiRing" class="ai-circle">
+
+                    <img src="https://img.magnific.com/free-vector/graident-ai-robot-vectorart_78370-4114.jpg?semt=ais_hybrid&w=740&q=80"
+                        alt="AI">
+
+                </div>
+
+                <h2 id="status">
+
+                    🟢 Ready
+
+                </h2>
+
+                <!-- Bubble -->
+
+                <div id="aiBubble" class="ai-bubble">
+
+                    Hello 👋 I'm Pragya.
+                    Ask me anything.
+
+                </div>
+
+                <!-- Thinking Dots -->
+
+                <div id="typingDots" class="typing-dots">
+
+                    <span></span>
+
+                    <span></span>
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+            <!-- Suggestions -->
+
+            <div class="suggestions">
+
+                <button>🌤 Weather</button>
+
+                <button>📰 Latest News</button>
+
+                <button>🎵 Play Music</button>
+
+                <button>😂 Tell Joke</button>
+
+            </div>
+
+            <!-- Input -->
+
+            <div class="chat-box">
+
+
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask anything to Pragya AI...">
+
+                <button id="micBtn">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                </button>
+                
+
+                <button id="sendBtn">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </div>
+
+        </main>
+
+        <!-- Right Panel -->
+
+        <aside class="right-panel">
+
+            <div class="card">
+
+                <h3>Time</h3>
+
+                <h1 id="time">00:00:00</h1>
+
+                <p id="date">Loading...</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Weather</h3>
+
+                <h2 id="temperature">--°C</h2>
+
+                <p id="weatherText">
+
+                    Loading...
+
+                </p>
+
+            </div>
+
+            <!-- <div class="card">
+
+                <h3>Quick Commands</h3>
+
+                <ul>
+
+                    <li>🎥 Open YouTube</li>
+
+                    <li>🌐 Open Google</li>
+
+                    <li>💬 Open WhatsApp</li>
+
+                    <li>🔍 Search Anything</li>
+
+                    <li>📅 Open Calendar</li>
+
+                </ul> -->
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+ recognition.onresult = function(event) {
+        let text = event.results[0][0].transcript;
+        document.getElementById("textBox").value = text;
+
+        // yaha AI function call hoga
+        getAIResponse(text);
+    };
+}
+
+function getAIResponse(userText) {
+    console.log("User said:", userText);
+
+    // yaha aap AI API (OpenAI etc.) call karoge
+}
+
+
+
+    <script src="config.js"></script>
+
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
